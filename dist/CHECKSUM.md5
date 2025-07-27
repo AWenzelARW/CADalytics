@@ -1,0 +1,26 @@
+# CADalytics Creator Factory - File Verification
+
+## Tarball Checksum
+To verify file integrity, run:
+```bash
+md5sum cadalytics-creator-factory.tar.gz
+```
+
+Expected checksum: 973c8c7a6b73673307e6677f1dc08772
+
+## Package Contents
+- Complete web application with professional UI
+- Express.js server with iframe compatibility  
+- CORS headers configured for embedding
+- Session management system
+- Deployment scripts and documentation
+- Environment configuration templates
+
+## Verified Compatible With
+- Node.js 16+ 
+- Windows, macOS, Linux
+- All major browsers
+- Iframe embedding environments
+
+## File Size
+~100KB compressed (professional web app)

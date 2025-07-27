@@ -1,0 +1,66 @@
+
+added 867 packages, and audited 868 packages in 21s
+
+
+88 packages are looking for funding
+  run `npm fund` for details
+
+
+5 moderate severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+[stage-0 11/15] RUN --mount=type=cache,id=s/16d9561d-45d8-4b0c-9590-2f3082d942f1-/root/npm,target=/root/.npm npm ci  ✔ 21 sec
+
+[stage-0 12/15] COPY . /app/.
+
+[stage-0 12/15] COPY . /app/.  ✔ 347 ms
+
+[stage-0 13/15] RUN --mount=type=cache,id=s/16d9561d-45d8-4b0c-9590-2f3082d942f1-node_modules/cache,target=/app/node_modules/.cache npm run build
+
+npm warn config production Use `--omit=dev` instead.
+
+
+> rest-express@1.0.0 build
+> vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+
+
+vite v5.4.19 building for production...
+
+✓ 0 modules transformed.
+
+x Build failed in 11ms
+
+error during build:
+Could not resolve entry module "index.html".
+    at getRollupError (file:///app/node_modules/rollup/dist/es/shared/parseAst.js:401:41)
+    at error (file:///app/node_modules/rollup/dist/es/shared/parseAst.js:397:42)
+    at ModuleLoader.loadEntryModule (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:21474:20)
+    at async Promise.all (index 0)
+
+✕ [stage-0 13/15] RUN --mount=type=cache,id=s/16d9561d-45d8-4b0c-9590-2f3082d942f1-node_modules/cache,target=/app/node_modules/.cache npm run build 
+process "/bin/bash -ol pipefail -c npm run build" did not complete successfully: exit code: 1
+ 
+
+Dockerfile:30
+
+-------------------
+
+28 |     # build phase
+
+29 |     COPY . /app/.
+
+30 | >>> RUN --mount=type=cache,id=s/16d9561d-45d8-4b0c-9590-2f3082d942f1-node_modules/cache,target=/app/node_modules/.cache npm run build
+
+31 |
+
+32 |
+
+-------------------
+
+ERROR: failed to build: failed to solve: process "/bin/bash -ol pipefail -c npm run build" did not complete successfully: exit code: 1
+
+Error: Docker build failed
